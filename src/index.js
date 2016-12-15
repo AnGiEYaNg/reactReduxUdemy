@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+import SearchBar from './components/search_bar';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const API_KEY = 'AIzaSyBtdkanoGjObuvM5e7fK5ioKU2WaTaZ7Mk';
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+// Create Angies first react component.
+// This component should compile to HTML.
+
+const App = () => {
+	return (
+		<div>
+			<SearchBar />
+		</div>
+	);
+}
+
+// Put this component on to the DOM.
+
+ReactDOM.render(<App />, document.querySelector('.container'));
